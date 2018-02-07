@@ -1,0 +1,10 @@
+{% extends "appointments/_layout.html" %}
+{% block body_content %}
+<h1>{% if not form.instance.pk %} Create Appointment {% else %} Edit {{ form.instance }}{% endif %}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="submit" value="Save">
+</form>
+{% endblock %}

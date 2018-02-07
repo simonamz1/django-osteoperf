@@ -1,0 +1,13 @@
+{% extends "appointments/_layout.html" %}
+
+{% block body_content %}
+	<h1>Appointment on: {{ appointment.slot }}</h1>
+	<p>By: {{ appointment.practitioner }}</p>
+	<p>At: {{ appointment.practice_location }}</p>
+	<hr>
+	<p>
+		<a href="{% url 'appointments:create' %}" class="btn">Add Appointment</a>
+		<a href="{% url 'appointments:update' pk=appointment.pk %}" class="btn">Edit Appointment</a>
+		<a href="{% url 'appointments:delete' pk=appointment.pk %}" class="btn">Delete Appointment</a>
+	</p>
+{% endblock %}

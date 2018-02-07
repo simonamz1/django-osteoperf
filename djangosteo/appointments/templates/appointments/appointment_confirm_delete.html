@@ -1,0 +1,9 @@
+{% extends "appointments/_layout.html" %}
+{% block body_content %}
+<h1>Delete {{ appointment.slot }} ?</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+    <a href="{% url 'appointments:detail' pk=appointment.pk %}">Cancel</a>
+</form>
+{% endblock %}
